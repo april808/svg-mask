@@ -1,0 +1,60 @@
+$blackMask: url(https://i.imgur.com/zz3xc6K.png)
+
+=size($w,$h:$w)
+  width: $w
+  height: $h
+  
+=flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+  
+html,body
+  margin: 0
+  padding: 0
+  +size(100%)
+  background-color: Wheat
+  +flexCenter
+  flex-direction: column
+  
+*
+  // border: 1px solid #000
+
+svg
+  background-color: rgba(CadetBlue,0.5)
+  
+.line
+  stroke-dasharray: 180px/*svg path 虛線長度*/
+  stroke-dashoffset: 180px/*svg path 虛線起點的位移*/
+  animation: line-ani 3s ease-in-out infinite
+  
+.mask-img
+  -webkit-mask: $blackMask
+  mask: $blackMask
+  // width: 100%
+  mask-repeat: no-repeat
+  -webkit-mask-repeat: no-repeat
+  // // mask-size: 100%
+  mask-position: center center
+  -webkit-mask-position: center center
+@keyframes line-ani
+  0%, 50%
+    stroke-dashoffset: 180px
+  50%, 100%
+    stroke-dashoffset: 0px
+  
+
+.demo1,.demo2
+  position: relative
+  
+.clip-img
+  -webkit-clip-path: url(#clipImg)
+  clip-path: url(#clipImg)
+  // +size(400px)
+  
+.line2, .line2 path
+  position: absolute
+  transform: translate(3px,3px)
+  left: 0
+  // +size(67px,133px)
+  

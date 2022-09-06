@@ -1,0 +1,63 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: Wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+svg {
+  background-color: rgba(95, 158, 160, 0.5);
+}
+
+.line {
+  stroke-dasharray: 180px;
+  stroke-dashoffset: 180px;
+  -webkit-animation: line-ani 3s ease-in-out infinite;
+          animation: line-ani 3s ease-in-out infinite;
+}
+
+.mask-img {
+  -webkit-mask: url(https://i.imgur.com/zz3xc6K.png);
+  mask: url(https://i.imgur.com/zz3xc6K.png);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center center;
+  -webkit-mask-position: center center;
+}
+
+@-webkit-keyframes line-ani {
+  0%, 50% {
+    stroke-dashoffset: 180px;
+  }
+  50%, 100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes line-ani {
+  0%, 50% {
+    stroke-dashoffset: 180px;
+  }
+  50%, 100% {
+    stroke-dashoffset: 0px;
+  }
+}
+.demo1, .demo2 {
+  position: relative;
+}
+
+.clip-img {
+  -webkit-clip-path: url(#clipImg);
+  clip-path: url(#clipImg);
+}
+
+.line2, .line2 path {
+  position: absolute;
+  transform: translate(3px, 3px);
+  left: 0;
+}

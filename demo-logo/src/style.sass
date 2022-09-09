@@ -1,0 +1,168 @@
+$color_primary: #A7DBDB
+$color_secondary: #F38630
+
+=size($w,$h:$w)
+  width: $w
+  height: $h
+  
+=flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+  
+=abCenter($l,$t)
+  position: absolute
+  left: $l
+  top: $t
+  transform: translate(-50%,-50%)
+  
+=svgline($length,$start:$length)
+  stroke-dasharray: $length/*svg path 虛線長度*/
+  stroke-dashoffset: $start/*svg path 虛線起點的位移*/
+  
+=ani-avgline($from,$to)
+  0%, 50%
+    stroke-dashoffset: $from
+  50%, 100%
+    stroke-dashoffset: $to
+
+$ani-l: ani-line-l
+$ani-m: ani-line-m
+$ani-c: ani-line-c
+$ani-bg: ani-bg
+$times: 1
+  
+@mixin ani-l
+  @keyframes #{$ani-l}
+    @content
+    
+@mixin ani-m
+  @keyframes #{$ani-m}
+    @content
+    
+@mixin ani-c
+  @keyframes #{$ani-c}
+    @content
+
+@mixin ani-bg
+  @keyframes #{$ani-bg}
+    @content
+
+=clip-img($clip-name)
+  -webkit-clip-path: url(#clipImg-#{$clip-name})
+  clip-path: url(#clipImg-#{$clip-name})
+
+*
+  // border: 1px solid #000
+  // box-sizing: border-box
+  
+body,html
+  +size(100%)
+  +flexCenter
+  flex-direction: column
+  background-color: $color_secondary
+  margin: 0
+  padding: 0
+  
+.demo-icon
+  +size(180px)
+  // background-image: url(https://i.imgur.com/ip9DBJR.jpg)
+  background-size: contain
+  position: relative
+  
+svg
+  // background-color: rgba(CadetBlue,0.5)
+
+.bg
+  // +abCenter(50%,50%)
+  +abCenter(calc(25% - 7px),0%)
+  // transform-origin: center
+  opacity: 0
+  animation: #{$ani-bg} 1s 2.5s ease #{$times} both
+  svg path
+    fill: $color_primary
+
+@include ani-bg
+  from
+    transform: rotateY(0deg)
+  to
+    transform: rotateY(3600deg)
+    opacity: 1
+    
+  
+.face
+  +abCenter(calc(50% - 3px),calc(50% + 2px))
+
+.body1
+  +abCenter(calc(50% - 2px),calc(50% + 21px))
+
+.body2
+  +abCenter(calc(50% + 1px),calc(50% + 57px))
+  
+.l ,.m, .c
+  position: relative
+  
+.l
+  margin-top: 26.5px
+  margin-left: 12.5px
+  .l-line
+    +svgline(197px)
+    animation: #{$ani-l} 3s ease-in-out #{$times} both
+
+  .l-line2, .l-line2 path
+    position: absolute
+    transform: translate(1.8px,3px)
+    left: 0
+
+  .clip-img-l
+    +clip-img(l)
+
+  @include ani-l
+    +ani-avgline(197px,0px)
+
+.m
+  margin-top: -146.5px
+  margin-left: 63px
+  .m-line
+    +svgline(219px)
+    animation: #{$ani-m} 3s 1.5s ease-in-out #{$times} both
+    
+  .m-line2, .m-line2 path
+    position: absolute
+    transform: translate(2.5px,1.5px)
+    left: 0
+    
+  .clip-img-m
+    +clip-img(m)
+      
+  @include ani-m
+    +ani-avgline(219px,0px)
+  
+.c
+  margin-top: -57px
+  margin-left: 108px
+  .c-line
+    +svgline(180px)
+    animation: #{$ani-c} 3s 3s ease-in-out #{$times} both
+
+  .c-line2, .c-line2 path
+    position: absolute
+    transform: translate(3px,3px)
+    top: 0
+    left: 0
+
+  .clip-img-c
+    +clip-img(c)
+
+  @include ani-c
+    +ani-avgline(180px,0px)
+    // 0%, 50%
+    //   stroke-dashoffset: 180px
+    // 50%, 100%
+    //   stroke-dashoffset: 0px
+
+// @keyframes line-ani
+//   0%, 50%
+//     stroke-dashoffset: 180px
+//   50%, 100%
+//     stroke-dashoffset: 0px

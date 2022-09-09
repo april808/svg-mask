@@ -5,7 +5,9 @@ A Pen created on CodePen.io.
 預覽：
 
 1. CodePen URL: [https://codepen.io/april808/pen/XWqbLMx](https://codepen.io/april808/pen/XWqbLMx).
+	> 1. [Demo-logo動畫](https://codepen.io/april808/pen/yLjOagE)
 1. GitHub: [https://april808.github.io/svg-mask/dist/index.html](https://april808.github.io/svg-mask/dist/index.html)
+	> 1. [Demo-logo動畫](https://april808.github.io/svg-mask/demo-logo/dist/index.html)
 
 說明：
 

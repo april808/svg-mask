@@ -1,0 +1,184 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F38630;
+  margin: 0;
+  padding: 0;
+}
+
+.demo-icon {
+  width: 180px;
+  height: 180px;
+  background-size: contain;
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  left: calc(25% - 7px);
+  top: 0%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-animation: ani-bg 1s 2.5s ease 1 both;
+          animation: ani-bg 1s 2.5s ease 1 both;
+}
+.bg svg path {
+  fill: #A7DBDB;
+}
+
+@-webkit-keyframes ani-bg {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(3600deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ani-bg {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(3600deg);
+    opacity: 1;
+  }
+}
+.face {
+  position: absolute;
+  left: calc(50% - 3px);
+  top: calc(50% + 2px);
+  transform: translate(-50%, -50%);
+}
+
+.body1 {
+  position: absolute;
+  left: calc(50% - 2px);
+  top: calc(50% + 21px);
+  transform: translate(-50%, -50%);
+}
+
+.body2 {
+  position: absolute;
+  left: calc(50% + 1px);
+  top: calc(50% + 57px);
+  transform: translate(-50%, -50%);
+}
+
+.l, .m, .c {
+  position: relative;
+}
+
+.l {
+  margin-top: 26.5px;
+  margin-left: 12.5px;
+}
+.l .l-line {
+  stroke-dasharray: 197px;
+  stroke-dashoffset: 197px;
+  -webkit-animation: ani-line-l 3s ease-in-out 1 both;
+          animation: ani-line-l 3s ease-in-out 1 both;
+}
+.l .l-line2, .l .l-line2 path {
+  position: absolute;
+  transform: translate(1.8px, 3px);
+  left: 0;
+}
+.l .clip-img-l {
+  -webkit-clip-path: url(#clipImg-l);
+  clip-path: url(#clipImg-l);
+}
+@-webkit-keyframes ani-line-l {
+  0%, 50% {
+    stroke-dashoffset: 197px;
+  }
+  50%, 100% {
+    stroke-dashoffset: 0px;
+  }
+}
+@keyframes ani-line-l {
+  0%, 50% {
+    stroke-dashoffset: 197px;
+  }
+  50%, 100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+.m {
+  margin-top: -146.5px;
+  margin-left: 63px;
+}
+.m .m-line {
+  stroke-dasharray: 219px;
+  stroke-dashoffset: 219px;
+  -webkit-animation: ani-line-m 3s 1.5s ease-in-out 1 both;
+          animation: ani-line-m 3s 1.5s ease-in-out 1 both;
+}
+.m .m-line2, .m .m-line2 path {
+  position: absolute;
+  transform: translate(2.5px, 1.5px);
+  left: 0;
+}
+.m .clip-img-m {
+  -webkit-clip-path: url(#clipImg-m);
+  clip-path: url(#clipImg-m);
+}
+@-webkit-keyframes ani-line-m {
+  0%, 50% {
+    stroke-dashoffset: 219px;
+  }
+  50%, 100% {
+    stroke-dashoffset: 0px;
+  }
+}
+@keyframes ani-line-m {
+  0%, 50% {
+    stroke-dashoffset: 219px;
+  }
+  50%, 100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+.c {
+  margin-top: -57px;
+  margin-left: 108px;
+}
+.c .c-line {
+  stroke-dasharray: 180px;
+  stroke-dashoffset: 180px;
+  -webkit-animation: ani-line-c 3s 3s ease-in-out 1 both;
+          animation: ani-line-c 3s 3s ease-in-out 1 both;
+}
+.c .c-line2, .c .c-line2 path {
+  position: absolute;
+  transform: translate(3px, 3px);
+  top: 0;
+  left: 0;
+}
+.c .clip-img-c {
+  -webkit-clip-path: url(#clipImg-c);
+  clip-path: url(#clipImg-c);
+}
+@-webkit-keyframes ani-line-c {
+  0%, 50% {
+    stroke-dashoffset: 180px;
+  }
+  50%, 100% {
+    stroke-dashoffset: 0px;
+  }
+}
+@keyframes ani-line-c {
+  0%, 50% {
+    stroke-dashoffset: 180px;
+  }
+  50%, 100% {
+    stroke-dashoffset: 0px;
+  }
+}

@@ -1,4 +1,5 @@
 $blackMask: url(https://i.imgur.com/zz3xc6K.png)
+$blackMask_SVG: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_C.svg")
 
 =size($w,$h:$w)
   width: $w
@@ -8,6 +9,11 @@ $blackMask: url(https://i.imgur.com/zz3xc6K.png)
   display: flex
   justify-content: center
   align-items: center
+  
+=mask-img($name)
+  mask: $name
+  mask-repeat: no-repeat
+  mask-position: center center
   
 html,body
   margin: 0
@@ -29,14 +35,11 @@ svg
   animation: line-ani 3s ease-in-out infinite
   
 .mask-img
-  -webkit-mask: $blackMask
-  mask: $blackMask
-  // width: 100%
-  mask-repeat: no-repeat
-  -webkit-mask-repeat: no-repeat
-  // // mask-size: 100%
-  mask-position: center center
-  -webkit-mask-position: center center
+  +mask-img($blackMask)
+  
+.mask-img-svg
+  +mask-img($blackMask_SVG)
+  
 @keyframes line-ani
   0%, 50%
     stroke-dashoffset: 180px
@@ -56,5 +59,3 @@ svg
   position: absolute
   transform: translate(3px,3px)
   left: 0
-  // +size(67px,133px)
-  

@@ -1,6 +1,10 @@
 $color_primary: #A7DBDB
 $color_secondary: #F38630
 
+$blackMask_SVG_C: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_C.svg")
+$blackMask_SVG_L: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_L.svg")
+$blackMask_SVG_M: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_M.svg")
+
 =size($w,$h:$w)
   width: $w
   height: $h
@@ -15,6 +19,18 @@ $color_secondary: #F38630
   left: $l
   top: $t
   transform: translate(-50%,-50%)
+  
+=mask-img($name)
+  mask: $name
+  mask-repeat: no-repeat
+  mask-position: center center
+  
+.mask_SVG_L
+  +mask-img($blackMask_SVG_L)
+.mask_SVG_M
+  +mask-img($blackMask_SVG_M)
+.mask_SVG_C
+  +mask-img($blackMask_SVG_C)
   
 =svgline($length,$start:$length)
   stroke-dasharray: $length/*svg path 虛線長度*/
@@ -48,9 +64,8 @@ $times: 1
   @keyframes #{$ani-bg}
     @content
 
-=clip-img($clip-name)
-  -webkit-clip-path: url(#clipImg-#{$clip-name})
-  clip-path: url(#clipImg-#{$clip-name})
+// =clip-img($clip-name)
+  // clip-path: url(#clipImg-#{$clip-name})
 
 *
   // border: 1px solid #000
@@ -70,13 +85,13 @@ body,html
   background-size: contain
   position: relative
   
-svg
-  // background-color: rgba(CadetBlue,0.5)
+// svg
+  background-color: rgba(CadetBlue,0.5)
 
 .bg
   // +abCenter(50%,50%)
   +abCenter(calc(25% - 7px),0%)
-  // transform-origin: center
+  transform-origin: center
   opacity: 0
   animation: #{$ani-bg} 1s 2.5s ease #{$times} both
   svg path
@@ -109,13 +124,13 @@ svg
     +svgline(197px)
     animation: #{$ani-l} 3s ease-in-out #{$times} both
 
-  .l-line2, .l-line2 path
+  // .l-line2, .l-line2 path
     position: absolute
     transform: translate(1.8px,3px)
     left: 0
 
-  .clip-img-l
-    +clip-img(l)
+  // .clip-img-l
+    // +clip-img(l)
 
   @include ani-l
     +ani-avgline(197px,0px)
@@ -127,13 +142,13 @@ svg
     +svgline(219px)
     animation: #{$ani-m} 3s 1.5s ease-in-out #{$times} both
     
-  .m-line2, .m-line2 path
+  // .m-line2, .m-line2 path
     position: absolute
     transform: translate(2.5px,1.5px)
     left: 0
     
-  .clip-img-m
-    +clip-img(m)
+  // .clip-img-m
+    // +clip-img(m)
       
   @include ani-m
     +ani-avgline(219px,0px)
@@ -145,14 +160,14 @@ svg
     +svgline(180px)
     animation: #{$ani-c} 3s 3s ease-in-out #{$times} both
 
-  .c-line2, .c-line2 path
+  // .c-line2, .c-line2 path
     position: absolute
     transform: translate(3px,3px)
     top: 0
     left: 0
 
-  .clip-img-c
-    +clip-img(c)
+  // .clip-img-c
+    // +clip-img(c)
 
   @include ani-c
     +ani-avgline(180px,0px)
@@ -166,3 +181,14 @@ svg
 //     stroke-dashoffset: 180px
 //   50%, 100%
 //     stroke-dashoffset: 0px
+
+.page_title
+  margin-top: 20px
+  text-align: left
+  color: #555
+  letter-spacing: 3px
+  font-weight: 500
+  position: absolute
+  bottom: 30px
+  left: 10px
+  z-index: 1

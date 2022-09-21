@@ -23,11 +23,20 @@ svg {
 
 .mask-img {
   -webkit-mask: url(https://i.imgur.com/zz3xc6K.png);
-  mask: url(https://i.imgur.com/zz3xc6K.png);
-  mask-repeat: no-repeat;
+          mask: url(https://i.imgur.com/zz3xc6K.png);
   -webkit-mask-repeat: no-repeat;
-  mask-position: center center;
+          mask-repeat: no-repeat;
   -webkit-mask-position: center center;
+          mask-position: center center;
+}
+
+.mask-img-svg {
+  -webkit-mask: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_C.svg");
+          mask: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_C.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
 }
 
 @-webkit-keyframes line-ani {

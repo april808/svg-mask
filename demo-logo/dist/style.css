@@ -1,3 +1,30 @@
+.mask_SVG_L {
+  -webkit-mask: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_L.svg");
+          mask: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_L.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+}
+
+.mask_SVG_M {
+  -webkit-mask: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_M.svg");
+          mask: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_M.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+}
+
+.mask_SVG_C {
+  -webkit-mask: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_C.svg");
+          mask: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo/vector_C.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+}
+
 body, html {
   width: 100%;
   height: 100%;
@@ -22,6 +49,7 @@ body, html {
   left: calc(25% - 7px);
   top: 0%;
   transform: translate(-50%, -50%);
+  transform-origin: center;
   opacity: 0;
   -webkit-animation: ani-bg 1s 2.5s ease 1 both;
           animation: ani-bg 1s 2.5s ease 1 both;
@@ -84,15 +112,6 @@ body, html {
   -webkit-animation: ani-line-l 3s ease-in-out 1 both;
           animation: ani-line-l 3s ease-in-out 1 both;
 }
-.l .l-line2, .l .l-line2 path {
-  position: absolute;
-  transform: translate(1.8px, 3px);
-  left: 0;
-}
-.l .clip-img-l {
-  -webkit-clip-path: url(#clipImg-l);
-  clip-path: url(#clipImg-l);
-}
 @-webkit-keyframes ani-line-l {
   0%, 50% {
     stroke-dashoffset: 197px;
@@ -119,15 +138,6 @@ body, html {
   stroke-dashoffset: 219px;
   -webkit-animation: ani-line-m 3s 1.5s ease-in-out 1 both;
           animation: ani-line-m 3s 1.5s ease-in-out 1 both;
-}
-.m .m-line2, .m .m-line2 path {
-  position: absolute;
-  transform: translate(2.5px, 1.5px);
-  left: 0;
-}
-.m .clip-img-m {
-  -webkit-clip-path: url(#clipImg-m);
-  clip-path: url(#clipImg-m);
 }
 @-webkit-keyframes ani-line-m {
   0%, 50% {
@@ -156,16 +166,6 @@ body, html {
   -webkit-animation: ani-line-c 3s 3s ease-in-out 1 both;
           animation: ani-line-c 3s 3s ease-in-out 1 both;
 }
-.c .c-line2, .c .c-line2 path {
-  position: absolute;
-  transform: translate(3px, 3px);
-  top: 0;
-  left: 0;
-}
-.c .clip-img-c {
-  -webkit-clip-path: url(#clipImg-c);
-  clip-path: url(#clipImg-c);
-}
 @-webkit-keyframes ani-line-c {
   0%, 50% {
     stroke-dashoffset: 180px;
@@ -181,4 +181,16 @@ body, html {
   50%, 100% {
     stroke-dashoffset: 0px;
   }
+}
+
+.page_title {
+  margin-top: 20px;
+  text-align: left;
+  color: #555;
+  letter-spacing: 3px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  z-index: 1;
 }
